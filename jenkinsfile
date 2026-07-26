@@ -1,0 +1,22 @@
+pipeline{
+    agent any
+
+    stages{
+        stage('Checkout'){
+            
+            steps{
+
+                echo 'Repository cloned successfully!'
+            }
+        }
+
+        stage('Project Files'){
+
+            steps{
+
+                sh 'pwd'
+                sh 'ls -R'
+            }
+        }
+    }
+}
