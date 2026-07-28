@@ -53,7 +53,7 @@ pipeline{
             steps {
                 sshagent(['EC2_JENKINS']) {
                     sh '''
-                        ssh -o StrictHostKeyChecking=no ubuntu@<YOUR_EC2_PUBLIC_IP> << EOF
+                        ssh -o StrictHostKeyChecking=no ubuntu@34.225.30.201 << EOF
                         cd ~/gallery
                         docker compose pull
                         docker compose up -d
