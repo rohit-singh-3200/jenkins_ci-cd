@@ -18,5 +18,17 @@ pipeline{
                 sh 'ls -R'
             }
         }
+
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t gallery-app .'
+             }
+        }
+
+        stage('List Images') {
+            steps {
+                sh 'docker images'
+            }
+        }
     }
 }
