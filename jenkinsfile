@@ -41,7 +41,11 @@ pipeline{
                     sh '''
                         echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
 
+                        docker tag gallery-app:latest $DOCKER_USER/gallery-app:${BUILD_NUMBER}
+
                         docker tag gallery-app:latest $DOCKER_USER/gallery-app:latest
+
+                        docker push $DOCKER_USER/gallery-app:${BUILD_NUMBER}
 
                         docker push $DOCKER_USER/gallery-app:latest
                     '''
