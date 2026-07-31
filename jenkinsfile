@@ -55,7 +55,7 @@ pipeline{
 
         stage('Deploy') {
             steps {
-                sshagent(['EC2_JENKINS']) {
+                sshagent(['ssh_agent']) {
                     sh '''
                         ssh -o StrictHostKeyChecking=no ubuntu@34.225.30.201 \
                         "cd ~/gallery && \
