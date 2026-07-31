@@ -57,7 +57,7 @@ pipeline{
             steps {
                 sshagent(['ssh_agent']) {
                     sh '''
-                        ssh -o StrictHostKeyChecking=no ubuntu@34.225.30.201 \
+                        ssh -o StrictHostKeyChecking=no ubuntu@13.206.229.207 \
                         "cd ~/gallery && \
                         docker compose pull && \
                         docker compose up -d"
