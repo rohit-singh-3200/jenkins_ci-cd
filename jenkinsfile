@@ -58,7 +58,7 @@ pipeline{
                 sshagent(['ssh_agent']) {
                     sh '''
                         ssh -o StrictHostKeyChecking=no ubuntu@13.206.229.207 \
-                        "cd ~/gallery && \
+                        "cd ~/jenkins && \
                         docker compose pull && \
                         docker compose up -d"
                     '''
